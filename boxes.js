@@ -198,5 +198,23 @@ function render() {
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
 	
 	gl.drawArrays(shapes.axes.type, shapes.axes.start, shapes.axes.size);	
+
+	//wire cube
+	let model = mult (modelViewMatrix, translate(1, 0, 0));
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(model));
+	
+	gl.drawArrays(shapes.wireCube.type, shapes.wireCube.start, shapes.wireCube.size);
+
+	//solid cube
+	model = mult(
+		mult (
+		modelViewMatrix, 
+		translate(1, 1, 0)),
+		rotateY(45)	
+	);
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(model));
+
+	gl.drawArrays(shapes.solidCube.type, shapes.solidCube.start, shapes.solidCube.size);
+
     requestAnimationFrame(render);
 }
