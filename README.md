@@ -1,6 +1,9 @@
 # WebGLLab3Part1
 Morgan Lincicum
 09/11/26
+Lab 3 Part 1
+
+In this lab, I learned how to manipulate the camera in WebGL without ThreeJS, including translation and rotation. Additionally, I saw the difference between an ortho and a perspective camera in WebGL. 
 
 ## Step 1
 After replacing the lookAt() function with a translate() function, there was no change in the display. This is because in WebGL, setting the camera (eye) to be at positive 10 Z (moving it forward) and looking at 0 Z is the same as moving the objects in the scene to -10 Z (moving them backwards).

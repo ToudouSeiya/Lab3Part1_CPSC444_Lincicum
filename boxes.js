@@ -198,10 +198,22 @@ function render() {
 	//modelViewMatrix = translate(0, 0, -10);
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
 
-	//rotate scene (Step 10)
+	// //rotate scene (Step 10)
+	// modelViewMatrix = mult (
+	// 	modelViewMatrix,
+	// 	rotateX(-90)
+	// );
+	// gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
+		
+
+	//rotate scene ver 2 (Step 11)
 	modelViewMatrix = mult (
 		modelViewMatrix,
-		rotateX(-90)
+		rotateX(-30)
+	);
+	modelViewMatrix = mult (
+		modelViewMatrix,
+		rotateY(25)
 	);
 	gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
 	
