@@ -1,3 +1,7 @@
+// Name: Morgan Lincicum
+// CPSC444
+// Lab 3
+
 //----------------------------------------------------------------------------
 // State Variable Setup 
 //----------------------------------------------------------------------------
@@ -189,7 +193,8 @@ function render() {
 	var at =  vec3(0.0, 0.0, 0.0);
 	var up =  vec3(0.0, 1.0, 0.0);
 
-	modelViewMatrix = lookAt(eye,at,up);
+	//modelViewMatrix = lookAt(eye,at,up);
+	modelViewMatrix = translate(0, 0, -10);
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
 	
 	gl.drawArrays(shapes.axes.type, shapes.axes.start, shapes.axes.size);	
